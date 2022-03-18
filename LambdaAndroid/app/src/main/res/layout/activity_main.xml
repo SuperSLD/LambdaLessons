@@ -6,11 +6,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         tools:context=".MainActivity">
+
+    <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
     />
 </LinearLayout>

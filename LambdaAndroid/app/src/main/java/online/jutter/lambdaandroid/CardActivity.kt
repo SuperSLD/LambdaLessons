@@ -10,8 +10,9 @@ class CardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_card)
 
         val count = intent.getIntExtra("count", 0)
+        val item = intent.getStringExtra("item")
 
-        tvItem.text = count.toString()
+        tvItem.text = item
         tvDescription.text = "Карточка №$count"
 
     }
