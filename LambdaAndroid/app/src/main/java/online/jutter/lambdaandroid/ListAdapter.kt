@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_list.view.*
 
 class ListAdapter(
-    private val openCard: (Int)->Unit
+    private val openCard: (Int)->Unit,
+    private val onAdd: ()->Unit,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val list = mutableListOf<String>()
@@ -26,6 +27,7 @@ class ListAdapter(
             itemView.setOnClickListener {
                 list.add(list.size.toString())
                 notifyItemInserted(list.size - 1)
+                onAdd()
             }
         }
     }

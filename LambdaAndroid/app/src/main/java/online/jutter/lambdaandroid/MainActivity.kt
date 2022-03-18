@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val listAdapter = ListAdapter(this::openCard)
+    private val listAdapter = ListAdapter(this::openCard, this::onAdd)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,5 +22,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, CardActivity::class.java)
         intent.putExtra("count", count)
         startActivity(intent)
+    }
+
+    private fun onAdd() {
+        rvList.layoutManager?.scrollToPosition(listAdapter.itemCount - 1)
     }
 }
